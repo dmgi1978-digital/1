@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГАРАНТ СДЕЛОК 3.0 — Безопасные сделки с криптой, NFT, фиатом. AI + Блокчейн. От 0.99%</title>
+    <meta name="description" content="Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве. Запустите сделку в Telegram за 2 минуты. Получите NFT-сертификат доверия.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="ГАРАНТ СДЕЛОК — Ваш ИИ-гарант в крипто и цифровом мире">
+    <meta property="og:description" content="Безопасные транзакции с NFT, криптой, фиатом. Комиссии от 0,99%. Первые 3 — бесплатно.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/8a6dff/ffffff?text=ГАРАНТ+СДЕЛОК+3.0">
+    <meta property="og:url" content="https://garant-sdelok.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ГАРАНТ СДЕЛОК — Ваш ИИ-гарант в крипто и цифровом мире">
+    <meta name="twitter:description" content="Безопасные транзакции с NFT, криптой, фиатом. Комиссии от 0,99%. Первые 3 — бесплатно.">
+    <meta name="twitter:image" content="https://via.placeholder.com/1200x630/8a6dff/ffffff?text=ГАРАНТ+СДЕЛОК+3.0">
+    
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FinancialService",
+        "name": "ГАРАНТ СДЕЛОК 3.0",
+        "description": "AI-powered escrow service for crypto, NFT, fiat and digital assets",
+        "offers": {
+            "@type": "Offer",
+            "price": "0.99",
+            "priceCurrency": "USD",
+            "description": "Escrow fee from 0.99%, first 3 deals free"
+        }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0f0c1a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 12, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .lang-switcher {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .lang-btn {
+            padding: 8px 16px;
+            background: transparent;
+            border: 1px solid #8a6dff;
+            color: #8a6dff;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .lang-btn.active {
+            background: #8a6dff;
+            color: #0f0c1a;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, #0f0c1a 0%, #1a0f2e 100%);
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #b8b8b8;
+        }
+        
+        .ai-input-container {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+        
+        .ai-input {
+            width: 100%;
+            padding: 20px;
+            font-size: 1.1rem;
+            background: rgba(138, 109, 255, 0.1);
+            border: 2px solid #8a6dff;
+            border-radius: 15px;
+            color: #ffffff;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .ai-input:focus {
+            border-color: #00f0b0;
+            box-shadow: 0 0 20px rgba(0, 240, 176, 0.3);
+        }
+        
+        .ai-input::placeholder {
+            color: #666;
+        }
+        
+        .ai-response {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 240, 176, 0.1);
+            border: 1px solid #00f0b0;
+            border-radius: 15px;
+            display: none;
+        }
+        
+        .ai-response.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+        
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .deal-scheme {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .deal-step {
+            padding: 15px;
+            background: rgba(138, 109, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .deal-arrow {
+            font-size: 24px;
+            color: #8a6dff;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            color: #0f0c1a;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(138, 109, 255, 0.4);
+        }
+        
+        /* Risk Calculator */
+        .risk-calculator {
+            padding: 80px 0;
+            background: #1a0f2e;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .calculator-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group label {
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: #b8b8b8;
+        }
+        
+        .form-group select,
+        .form-group input {
+            padding: 15px;
+            background: rgba(138, 109, 255, 0.1);
+            border: 1px solid #8a6dff;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        
+        .risk-result {
+            margin-top: 30px;
+            padding: 30px;
+            background: rgba(0, 240, 176, 0.1);
+            border: 1px solid #00f0b0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .risk-level {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .risk-low { color: #00f0b0; }
+        .risk-medium { color: #ffa500; }
+        .risk-high { color: #ff4d8d; }
+        
+        .risk-bar {
+            width: 100%;
+            height: 10px;
+            background: #333;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        
+        .risk-fill {
+            height: 100%;
+            transition: width 0.5s ease;
+        }
+        
+        .risk-fill.low { background: #00f0b0; width: 25%; }
+        .risk-fill.medium { background: #ffa500; width: 60%; }
+        .risk-fill.high { background: #ff4d8d; width: 90%; }
+        
+        /* NFT Section */
+        .nft-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a0f2e 0%, #0f0c1a 100%);
+            text-align: center;
+        }
+        
+        .nft-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .nft-card {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .nft-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            border-radius: 22px;
+            z-index: -1;
+        }
+        
+        .nft-text {
+            color: #0f0c1a;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        /* Referral Section */
+        .referral-section {
+            padding: 80px 0;
+            background: #0f0c1a;
+        }
+        
+        .referral-form {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .referral-input {
+            width: 100%;
+            padding: 15px;
+            background: rgba(138, 109, 255, 0.1);
+            border: 1px solid #8a6dff;
+            border-radius: 10px;
+            color: #ffffff;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+        
+        .referral-link {
+            padding: 15px;
+            background: rgba(0, 240, 176, 0.1);
+            border: 1px solid #00f0b0;
+            border-radius: 10px;
+            margin: 20px 0;
+            word-break: break-all;
+            display: none;
+        }
+        
+        .referral-link.show {
+            display: block;
+            animation: slideDown 0.5s ease;
+        }
+        
+        .copy-btn {
+            background: #8a6dff;
+            color: #0f0c1a;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        
+        /* Trust Wall */
+        .trust-wall {
+            padding: 80px 0;
+            background: #1a0f2e;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .review-card {
+            padding: 25px;
+            background: rgba(138, 109, 255, 0.1);
+            border: 1px solid #8a6dff;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #8a6dff, #00f0b0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #0f0c1a;
+            margin-bottom: 15px;
+        }
+        
+        .review-text {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .review-hash {
+            font-size: 0.8rem;
+            color: #8a6dff;
+            word-break: break-all;
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background: #0f0c1a;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .deal-scheme {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .deal-arrow {
+                transform: rotate(90deg);
+            }
+            
+            .nft-container {
+                flex-direction: column;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">ГАРАНТ СДЕЛОК 3.0</div>
+                <div class="lang-switcher">
+                    <button class="lang-btn active" onclick="switchLang('ru')">RU</button>
+                    <button class="lang-btn" onclick="switchLang('en')">EN</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="fade-in">Ваша сделка — под защитой AI и блокчейна. 0% риска. От 0.99% комиссии.</h1>
+            <p class="fade-in">Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве.</p>
+            
+            <div class="ai-input-container fade-in">
+                <input type="text" class="ai-input" placeholder="Хочу купить NFT за ETH" id="aiInput">
+                <div class="ai-response" id="aiResponse">
+                    <div class="deal-scheme">
+                        <div class="deal-step">
+                            <h4>Покупатель</h4>
+                            <p>Отправляет ETH</p>
+                        </div>
+                        <div class="deal-arrow">→</div>
+                        <div class="deal-step">
+                            <h4>Продавец</h4>
+                            <p>Получает NFT</p>
+                        </div>
+                    </div>
+                    <p><strong>Комиссия:</strong> 0.99% (первая сделка бесплатно)</p>
+                    <p><strong>Время исполнения:</strong> 2-5 минут</p>
+                    <a href="https://t.me/GARANT_S_bot" class="cta-button">Запустить в Telegram</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Calculator -->
+    <section class="risk-calculator">
+        <div class="container">
+            <h2 class="section-title">Калькулятор риска</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label for="asset">Актив</label>
+                    <select id="asset">
+                        <option value="btc">Bitcoin (BTC)</option>
+                        <option value="eth">Ethereum (ETH)</option>
+                        <option value="nft">NFT</option>
+                        <option value="usdt">USDT</option>
+                        <option value="fiat">Фиат (USD/EUR)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Сумма ($)</label>
+                    <input type="number" id="amount" placeholder="1000">
+                </div>
+                <div class="form-group">
+                    <label for="country">Страна (для фиата)</label>
+                    <select id="country">
+                        <option value="us">США</option>
+                        <option value="eu">ЕС</option>
+                        <option value="ru">Россия</option>
+                        <option value="other">Другая</option>
+                    </select>
+                </div>
+                <button class="cta-button" onclick="calculateRisk()">Рассчитать риск</button>
+            </div>
+            
+            <div class="risk-result" id="riskResult" style="display: none;">
+                <div class="risk-level" id="riskLevel">Низкий риск</div>
+                <div class="risk-bar">
+                    <div class="risk-fill low" id="riskFill"></div>
+                </div>
+                <p id="riskFee">Комиссия: 0.99%</p>
+                <p id="riskRecommendation">Рекомендации появятся после расчета</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NFT Section -->
+    <section class="nft-section">
+        <div class="container">
+            <h2 class="section-title">Ваша сделка — как NFT</h2>
+            <p class="fade-in">Каждая сделка — это доказательство надежности</p>
+            
+            <div class="nft-container fade-in">
+                <div class="nft-card">
+                    <div class="nft-text">SAFE<br>DEAL</div>
+                </div>
+            </div>
+            
+            <p class="fade-in">После завершения вы создадите NFT-сертификат Soulbound (не продается, только ваш). Делитесь с ними — и получите +10% к реферальному вознаграждению.</p>
+        </div>
+    </section>
+
+    <!-- Referral Section -->
+    <section class="referral-section">
+        <div class="container">
+            <h2 class="section-title">Пригласите другого — получите 20% от его комиссии</h2>
+            <div class="referral-form">
+                <input type="text" class="referral-input" id="telegramId" placeholder="Ваш Telegram ID">
+                <button class="cta-button" onclick="generateReferralLink()">Создать ссылку</button>
+                
+                <div class="referral-link" id="referralLink">
+                    <span id="linkText"></span>
+                    <button class="copy-btn" onclick="copyLink()">Копировать</button>
+                </div>
+                
+                <p>Вы уже заработали $<span id="earnings">0</span>. Поделитесь — и начните получать пассивный доход</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Wall -->
+    <section class="trust-wall">
+        <div class="container">
+            <h2 class="section-title">Стена доверия</h2>
+            <div class="reviews-grid">
+                <div class="review-card fade-in">
+                    <div class="review-avatar">A</div>
+                    <div class="review-text">Купил NFT за 5 ETH — всё прошло идеально. Возврат был бы за 1 час!</div>
+                    <div class="review-hash">0x1234...5678</div>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-avatar">B</div>
+                    <div class="review-text">Продал Bitcoin за $50K — комиссия всего 0.99%. Рекомендую!</div>
+                    <div class="review-hash">0xabcd...efgh</div>
+                </div>
+                <div class="review-card fade-in">
+                    <div class="review-avatar">C</div>
+                    <div class="review-text">Первая сделка бесплатная — отличный способ попробовать сервис!</div>
+                    <div class="review-hash">0x9876...5432</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ГАРАНТ СДЕЛОК 3.0. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language switching
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            if (lang === 'en') {
+                // English translations would go here
+                document.querySelector('.hero h1').textContent = 'Your deal — protected by AI and blockchain. 0% risk. From 0.99% commission.';
+                document.querySelector('.hero p').textContent = 'First 3 deals — free. 300+ assets. Refund within 1 hour if fraud.';
+            } else {
+                // Russian (default)
+                document.querySelector('.hero h1').textContent = 'Ваша сделка — под защитой AI и блокчейна. 0% риска. От 0.99% комиссии.';
+                document.querySelector('.hero p').textContent = 'Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве.';
+            }
+        }
+
+        // AI Input Handler
+        document.getElementById('aiInput').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const response = document.getElementById('aiResponse');
+            
+            if (query.includes('nft') && query.includes('eth')) {
+                response.classList.add('show');
+            } else if (query.length === 0) {
+                response.classList.remove('show');
+            }
+        });
+
+        // Risk Calculator
+        function calculateRisk() {
+            const asset = document.getElementById('asset').value;
+            const amount = parseInt(document.getElementById('amount').value) || 0;
+            const country = document.getElementById('country').value;
+            
+            let riskLevel = 'low';
+            let riskClass = 'low';
+            let fee = '0.99%';
+            let recommendation = 'Сделка безопасна для выполнения';
+            
+            if (amount > 50000) {
+                riskLevel = 'Высокий риск';
+                riskClass = 'high';
+                fee = '1.5%';
+                recommendation = 'Рекомендуем использовать мультиподпись для сделок > $50K';
+            } else if (amount > 10000) {
+                riskLevel = 'Средний риск';
+                riskClass = 'medium';
+                fee = '1.2%';
+                recommendation = 'Добавьте верификацию через World ID для снижения комиссии на 0,2%';
+            } else {
+                riskLevel = 'Низкий риск';
+                riskClass = 'low';
+                fee = '0.99%';
+                recommendation = 'Сделка безопасна для выполнения';
+            }
+            
+            if (asset === 'fiat' && country !== 'us' && country !== 'eu') {
+                riskLevel = 'Средний риск';
+                riskClass = 'medium';
+                fee = '1.5%';
+                recommendation = 'Дополнительная верификация требуется для данной страны';
+            }
+            
+            document.getElementById('riskLevel').textContent = riskLevel;
+            document.getElementById('riskLevel').className = `risk-level risk-${riskClass}`;
+            document.getElementById('riskFill').className = `risk-fill ${riskClass}`;
+            document.getElementById('riskFee').textContent = `Комиссия: ${fee}`;
+            document.getElementById('riskRecommendation').textContent = recommendation;
+            document.getElementById('riskResult').style.display = 'block';
+        }
+
+        // Referral Link Generator
+        function generateReferralLink() {
+            const telegramId = document.getElementById('telegramId').value;
+            if (!telegramId) {
+                alert('Введите ваш Telegram ID');
+                return;
+            }
+            
+            const link = `https://t.me/GARANT_S_bot?start=ref_${telegramId}`;
+            document.getElementById('linkText').textContent = link;
+            document.getElementById('referralLink').classList.add('show');
+        }
+
+        // Copy Link
+        function copyLink() {
+            const linkText = document.getElementById('linkText').textContent;
+            navigator.clipboard.writeText(linkText).then(() => {
+                alert('Ссылка скопирована!');
+            });
+        }
+
+        // Load earnings from localStorage
+        function loadEarnings() {
+            const earnings = localStorage.getItem('garantEarnings') || '0';
+            document.getElementById('earnings').textContent = earnings;
+        }
+
+        // Load personalized content
+        function loadPersonalizedContent() {
+            const lastAsset = localStorage.getItem('lastAsset');
+            const lastAmount = localStorage.getItem('lastAmount');
+            
+            if (lastAsset && lastAmount) {
+                const aiInput = document.getElementById('aiInput');
+                aiInput.placeholder = `Готовы продать ${lastAsset} за $${lastAmount}?`;
+            }
+        }
+
+        // Save user preferences
+        function savePreferences(asset, amount) {
+            localStorage.setItem('lastAsset', asset);
+            localStorage.setItem('lastAmount', amount);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadEarnings();
+            loadPersonalizedContent();
+            
+            // Add fade-in animation to elements
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.animationDelay = `${index * 0.1}s`;
+                }, 100);
+            });
+        });
+
+        // Track conversions for optimization
+        function trackConversion(action, data) {
+            const conversions = JSON.parse(localStorage.getItem('garantConversions') || '[]');
+            conversions.push({
+                action: action,
+                data: data,
+                timestamp: Date.now()
+            });
+            localStorage.setItem('garantConversions', JSON.stringify(conversions));
+        }
+
+        // Track CTA clicks
+        document.querySelectorAll('.cta-button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                trackConversion('cta_click', {
+                    text: this.textContent,
+                    section: this.closest('section').className
+                });
+            });
+        });
+    </script>
+</body>
+</html>
