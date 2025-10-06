@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>ГАРАНТ СДЕЛОК 3.0 — Безопасные сделки с криптой, NFT, фиатом. AI + Блокчейн. От 0.99%.</title>
+  <meta name="description" content="Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве. Запустите сделку в Telegram за 2 минуты. Получите NFT-сертификат доверия.">
+  <link rel="canonical" href="https://garant3.example/">
+  <meta name="theme-color" content="#0f0c1a">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ГАРАНТ СДЕЛОК — Ваш ИИ-гарант в крипто и цифровом мире">
+  <meta property="og:description" content="Безопасные транзакции с NFT, криптой, фиатом. Комиссии от 0,99%. Первые 3 — бесплатно.">
+  <meta property="og:image" content="https://res.cloudinary.com/demo/image/upload/w_1200,h_630,c_fill,co_rgb:FFFFFF,l_text:Arial_70_bold:GARANT%20SDELOK%203.0/v1/sample.jpg">
+  <meta property="og:url" content="https://garant3.example/">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"FinancialService",
+    "name":"ГАРАНТ СДЕЛОК 3.0",
+    "description":"AI-powered escrow service for crypto, NFT, fiat and digital assets",
+    "offers":{
+      "@type":"Offer",
+      "price":"0.99",
+      "priceCurrency":"USD",
+      "description":"Escrow fee from 0.99%, first 3 deals free"
+    }
+  }</script>
+  <style>
+    :root{--bg:#0f0c1a;--fg:#eaeafa;--muted:#a9a7be;--accent:#8a6dff;--accent2:#00f0b0;--warn:#ff4d8d;--card:#17132a;--ok:#00f0b0;--grad:linear-gradient(135deg,#8a6dff,#00f0b0)}
+    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--accent)}
+    .wrap{max-width:980px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:var(--grad);display:inline-grid;place-items:center;font-size:14px}
+    .lang{display:flex;gap:6px}
+    .lang button{background:transparent;border:1px solid #2a2549;color:var(--fg);padding:6px 10px;border-radius:8px;cursor:pointer}
+    .lang button.active{border-color:var(--accent);color:#fff}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:start;margin:24px 0}
+    .h-title{font-size:28px;font-weight:700;margin:4px 0}
+    .h-sub{color:var(--muted);margin:8px 0 16px}
+    .card{background:var(--card);border:1px solid #241f3f;border-radius:14px;padding:16px}
+    .input,select{width:100%;background:#120f22;color:#fff;border:1px solid #2a2549;border-radius:10px;padding:12px}
+    .row{display:flex;gap:10px}
+    .btn{background:var(--grad);border:0;color:#0b0a14;padding:12px 14px;border-radius:10px;font-weight:700;cursor:pointer}
+    .muted{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .meter{height:10px;border-radius:6px;background:#201b3a;overflow:hidden}
+    .bar{height:100%;background:linear-gradient(90deg,#34d399,#fbbf24,#ef4444)}
+    .nft{display:flex;gap:12px;align-items:center}
+    .small{font-size:12px}
+    .trust{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .trust .item{display:flex;gap:10px}
+    .avatar{width:36px;height:36px;border-radius:50%;background:#222}
+    footer{margin:28px 0;color:var(--muted);font-size:12px}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}.grid,.trust{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <span class="logo-badge">G3</span>
+        <span>ГАРАНТ СДЕЛОК 3.0</span>
+      </div>
+      <div class="lang" aria-label="language switcher">
+        <button id="ruBtn" class="active" data-lang="ru">RU</button>
+        <button id="enBtn" data-lang="en">EN</button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="h-title" data-i18n="hero_title">Ваша сделка — под защитой AI и блокчейна. 0% риска. От 0.99% комиссии.</div>
+        <div class="h-sub" data-i18n="hero_sub">Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве.</div>
+        <div class="card">
+          <label class="small muted" data-i18n="hero_input_label">Опишите сделку</label>
+          <input id="intent" class="input" placeholder="Хочу купить NFT за ETH" autocomplete="off">
+          <div id="aiPlan" class="muted" style="margin:10px 0 8px"></div>
+          <div class="row">
+            <button id="ctaBtn" class="btn" data-i18n="cta_launch">Запустить в Telegram</button>
+            <button id="ctaHow" class="btn" style="background:#201b3a;color:#fff;border:1px solid #2a2549" data-i18n="cta_how">Как это работает?</button>
+          </div>
+          <div id="helloBack" class="small muted" style="margin-top:8px"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700;margin-bottom:8px" data-i18n="risk_title">Динамический калькулятор риска</div>
+        <div class="row">
+          <select id="asset">
+            <option>BTC</option><option>ETH</option><option>USDT</option><option>NFT</option><option>Fiat</option>
+          </select>
+          <input id="amount" class="input" type="number" min="1" placeholder="Сумма">
+          <input id="country" class="input" placeholder="Страна">
+        </div>
+        <label class="small" style="display:flex;align-items:center;gap:8px;margin:8px 0"><input id="worldId" type="checkbox"> <span data-i18n="worldid">World ID снижает комиссию на 0.2%</span></label>
+        <div class="small muted" data-i18n="risk_level">Уровень риска</div>
+        <div class="meter" aria-label="risk meter"><div id="riskBar" class="bar" style="width:12%"></div></div>
+        <div class="row" style="margin-top:8px">
+          <div><b data-i18n="fee">Комиссия:</b> <span id="fee">0.99%</span></div>
+          <div><b data-i18n="eta">Время:</b> <span id="eta">~30 мин</span></div>
+        </div>
+        <div id="tips" class="small" style="margin-top:8px"></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <div style="font-weight:700" data-i18n="nft_title">Каждая сделка — это доказательство надежности</div>
+        <div class="muted small" data-i18n="nft_desc" style="margin-bottom:8px">После завершения вы создадите NFT‑сертификат Soulbound. Делитесь им — и получите +10% к реферальному вознаграждению.</div>
+        <div class="nft">
+          <svg width="84" height="84" viewBox="0 0 100 100" aria-label="NFT badge">
+            <defs>
+              <linearGradient id="grad" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#8a6dff"/>
+                <stop offset="100%" stop-color="#00f0b0"/>
+              </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="45" fill="url(#grad)" />
+            <text x="50" y="55" text-anchor="middle" fill="white" font-size="10">SAFE DEAL</text>
+          </svg>
+          <div class="small">
+            <div id="nftLabel"><b>Soulbound NFT</b> · #SAFE</div>
+            <button id="shareNFT" class="btn" style="margin-top:6px" data-i18n="nft_share">Поделиться</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700" data-i18n="ref_title">Пригласите — получите 20% от комиссии</div>
+        <div class="small muted" data-i18n="ref_desc">Введите ваш Telegram ID</div>
+        <div class="row" style="margin-top:6px">
+          <input id="tgid" class="input" placeholder="123456789">
+          <button id="genRef" class="btn" data-i18n="ref_make">Создать ссылку</button>
+        </div>
+        <div class="small" style="margin-top:8px"><span data-i18n="ref_link">Ваша ссылка:</span> <a id="refUrl" href="#" target="_blank" rel="noopener">—</a></div>
+        <div id="earnings" class="small muted" style="margin-top:6px" data-i18n="ref_stats">Вы уже заработали $0. Поделитесь — и начните получать пассивный доход</div>
+      </div>
+      <div class="card">
+        <div style="font-weight:700" data-i18n="trust_title">Стена доверия</div>
+        <div class="trust" style="margin-top:8px">
+          <div class="item"><img class="avatar" alt="avatar" src="https://api.dicebear.com/7.x/identicon/svg?seed=eth5"/><div class="small">Купил NFT за 5 ETH — всё прошло идеально. <a href="#" class="muted">#0xabc…</a></div></div>
+          <div class="item"><img class="avatar" alt="avatar" src="https://api.dicebear.com/7.x/identicon/svg?seed=btc2"/><div class="small">USDT→RUB. Мгновенно, безопасно. Возврат был бы за 1 час!</div></div>
+          <div class="item"><img class="avatar" alt="avatar" src="https://api.dicebear.com/7.x/identicon/svg?seed=dao7"/><div class="small">Fiat→ETH. Рекомендую мультиподпись для >50K.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2025 GARANT 3.0 · <span data-i18n="foot_copy">Экономика доверия: репутация = ценность. NFT не продаётся, а доказывает вашу историю.</span></div>
+    </footer>
+  </div>
+
+  <script>
+  (function(){
+    const $=s=>document.querySelector(s);
+    const i18n={
+      ru:{
+        hero_title:"Ваша сделка — под защитой AI и блокчейна. 0% риска. От 0.99% комиссии.",
+        hero_sub:"Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве.",
+        hero_input_label:"Опишите сделку",
+        cta_launch:"Запустить в Telegram",
+        cta_launch_b:"Начать в Telegram",
+        cta_how:"Как это работает?",
+        risk_title:"Динамический калькулятор риска",
+        worldid:"World ID снижает комиссию на 0.2%",
+        risk_level:"Уровень риска",
+        fee:"Комиссия:",eta:"Время:",
+        nft_title:"Каждая сделка — это доказательство надежности",
+        nft_desc:"После завершения вы создадите NFT‑сертификат Soulbound. Делитесь им — и получите +10% к реферальному вознаграждению.",
+        nft_share:"Поделиться",
+        ref_title:"Пригласите — получите 20% от комиссии",
+        ref_desc:"Введите ваш Telegram ID",
+        ref_make:"Создать ссылку",
+        ref_link:"Ваша ссылка:",
+        ref_stats:"Вы уже заработали $0. Поделитесь — и начните получать пассивный доход",
+        trust_title:"Стена доверия",
+        foot_copy:"Экономика доверия: репутация = ценность. NFT не продаётся, а доказывает вашу историю.",
+        hello_back:"Привет снова! Готовы {verb} {asset}?"
+      },
+      en:{
+        hero_title:"Your deal is secured by AI and blockchain. 0% risk. From 0.99%.",
+        hero_sub:"First 3 deals free. 300+ assets. 1h refund in case of fraud.",
+        hero_input_label:"Describe your deal",
+        cta_launch:"Start in Telegram",
+        cta_launch_b:"Launch in Telegram",
+        cta_how:"How it works?",
+        risk_title:"Dynamic risk calculator",
+        worldid:"World ID reduces fee by 0.2%",
+        risk_level:"Risk level",
+        fee:"Fee:",eta:"ETA:",
+        nft_title:"Every deal is proof of reliability",
+        nft_desc:"After completion you mint a Soulbound NFT certificate. Share it to get +10% referral bonus.",
+        nft_share:"Share",
+        ref_title:"Invite and get 20% of fees",
+        ref_desc:"Enter your Telegram ID",
+        ref_make:"Create link",
+        ref_link:"Your link:",
+        ref_stats:"You earned $0 yet. Share to start passive income",
+        trust_title:"Wall of Trust",
+        foot_copy:"Economy of trust: reputation equals value. NFT is non-transferable, proves your history.",
+        hello_back:"Welcome back! Ready to {verb} {asset}?"
+      }
+    };
+
+    const state={lang:localStorage.getItem('g3_lang')||'ru'};
+    const setLang=(l)=>{state.lang=l;localStorage.setItem('g3_lang',l);document.documentElement.lang=l;$('#ruBtn').classList.toggle('active',l==='ru');$('#enBtn').classList.toggle('active',l==='en');
+      document.querySelectorAll('[data-i18n]').forEach(n=>{const k=n.dataset.i18n;n.textContent=i18n[l][k]||n.textContent});
+      document.title=(l==='ru')?"ГАРАНТ СДЕЛОК 3.0 — Безопасные сделки с криптой, NFT, фиатом. AI + Блокчейн. От 0.99%.":"GARANT DEALS 3.0 — Safe crypto, NFT, fiat deals. AI + Blockchain. From 0.99%.";
+      const desc=(l==='ru')?"Первые 3 сделки — бесплатно. 300+ активов. Возврат за 1 час при мошенничестве. Запустите сделку в Telegram за 2 минуты. Получите NFT-сертификат доверия.":"First 3 deals free. 300+ assets. 1h refund if fraud. Start in Telegram in 2 minutes.";
+      const m=document.querySelector('meta[name=description]');if(m)m.setAttribute('content',desc);
+      chooseCTA();
+    };
+
+    $('#ruBtn').onclick=()=>setLang('ru');
+    $('#enBtn').onclick=()=>setLang('en');
+
+    // AI-like planner (rule-based)
+    const verbs={ru:{buy:'купить',sell:'продать',swap:'обменять'},en:{buy:'buy',sell:'sell',swap:'swap'}};
+    const parseIntent=(t)=>{
+      t=(t||'').trim();
+      const L=t.toLowerCase();
+      const assets=['btc','eth','usdt','nft','ton','sol','fiat'];
+      const foundAsset=assets.find(a=>L.includes(a))||'asset';
+      const isBuy=/(купить|buy)/.test(L),isSell=/(продать|sell)/.test(L),isSwap=/(обменять|swap)/.test(L);
+      const action=isBuy?'buy':isSell?'sell':isSwap?'swap':'buy';
+      const valMatch=t.match(/(\d+[\.,]?\d*)\s*(usd|usdt|rub|eur|eth|btc)?/i);
+      const amount=valMatch?valMatch[1]:'';const cur=(valMatch&&valMatch[2]||'').toUpperCase();
+      return {action,asset:foundAsset.toUpperCase(),amount,currency:cur};
+    };
+    const plan=(intent)=>{
+      const p=parseIntent(intent);
+      const feeBase=0.99, risk=calcRisk(p.asset,Number(p.amount||0),($('#country').value||'').trim());
+      const fee=(feeBase + (risk>60?0.3:risk>35?0.15:0)).toFixed(2);
+      const eta=risk>60?'~60 мин':risk>35?'~45 мин':'~30 мин';
+      const l=state.lang; const act=verbs[l][p.action]||p.action;
+      return {text:`${(l==='ru')?`Схема: ${act} ${p.asset}${p.amount?` на ${p.amount} ${p.currency||''}`:''}. Комиссия ~ ${fee}%. Время: ${eta}.`: `Plan: ${p.action} ${p.asset}${p.amount?` for ${p.amount} ${p.currency||''}`:''}. Fee ~ ${fee}%. ETA: ${eta}.`}`,p,fee,eta,risk};
+    };
+
+    // Risk calculator
+    const calcRisk=(asset,amount,country)=>{
+      let r=12;
+      if(asset==='NFT') r+=15; if(asset==='Fiat'||asset==='FIAT') r+=8; if(amount>10000) r+=22; else if(amount>5000) r+=14; else if(amount>1000) r+=8;
+      if(/(ru|by|ng|br)/i.test(country)) r+=6; if(/(us|eu|sg|jp)/i.test(country)) r-=3; r=Math.max(5,Math.min(95,r));
+      return r;
+    };
+    const refreshRisk=()=>{
+      const asset=$('#asset').value; const amount=Number($('#amount').value||0); const country=$('#country').value; const risk=calcRisk(asset,amount,country);
+      $('#riskBar').style.width=risk+'%';
+      const feeBase=0.99 + (risk>60?0.3:risk>35?0.15:0);
+      const world=$('#worldId').checked? -0.2:0; const fee=Math.max(0,feeBase+world).toFixed(2)+'%';
+      $('#fee').textContent=fee;
+      $('#eta').textContent=risk>60?'~60 мин':risk>35?'~45 мин':'~30 мин';
+      const tipsRU=[
+        'Рекомендуем мультиподпись для сделок > $50K',
+        'Добавьте World ID для снижения комиссии на 0.2%',
+        'Дробите платёж на транши для снижения риска'
+      ];
+      const tipsEN=[
+        'Use multisig for deals > $50K',
+        'Add World ID to reduce fee by 0.2%',
+        'Split payment into tranches to reduce risk'
+      ];
+      $('#tips').textContent=(state.lang==='ru'?tipsRU:tipsEN)[risk>60?0:risk>35?1:2];
+    };
+    ['asset','amount','country','worldId'].forEach(id=>{$('#'+id).addEventListener('input',refreshRisk)});
+
+    // A/B-tested CTA selection (persist to localStorage)
+    const ctaKey='g3_cta_stats';
+    const getStats=()=>{try{return JSON.parse(localStorage.getItem(ctaKey)||'{}')}catch(e){return{}}};
+    const saveStats=(s)=>localStorage.setItem(ctaKey,JSON.stringify(s));
+    const variants=()=> state.lang==='ru'?['cta_launch','cta_launch_b']:['cta_launch','cta_launch_b'];
+    const chooseCTA=()=>{
+      const s=getStats(); const vs=variants(); const scores=vs.map(v=>{const x=s[v]||{c:0,click:0}; return {v,cv:(x.click+1)/((x.c||0)+2)}}); // simple CTR +1 smoothing
+      scores.sort((a,b)=>b.cv-a.cv); const pick=(s[vs[0]]||{c:0}).c===0 && (s[vs[1]]||{c:0}).c===0 ? vs[Math.random()<.5?0:1] : scores[0].v;
+      const key=pick; const text=i18n[state.lang][key]; const btn=$('#ctaBtn'); btn.textContent=text; btn.dataset.i18n=key;
+      const st=getStats(); st[key]=Object.assign({c:0,click:0},st[key]); st[key].c++; saveStats(st);
+    };
+
+    // Personalization
+    const last=JSON.parse(localStorage.getItem('g3_last_intent')||'null');
+    if(last){ const l=state.lang; const act=(l==='ru')?(verbs.ru[last.action]||last.action):(verbs.en[last.action]||last.action); $('#helloBack').textContent=(i18n[l].hello_back||'').replace('{verb}',act).replace('{asset}',last.asset);}    
+
+    // Intent typing to plan
+    const intentEl=$('#intent');
+    const renderPlan=()=>{
+      const res=plan(intentEl.value);
+      $('#aiPlan').textContent=res.text; refreshRisk(); // keep in sync
+    };
+    intentEl.addEventListener('input',renderPlan);
+    renderPlan();
+
+    // CTA click: deep-link to Telegram bot and record conversion
+    $('#ctaBtn').onclick=()=>{
+      const res=plan(intentEl.value); localStorage.setItem('g3_last_intent',JSON.stringify(res.p));
+      const s=getStats(); const v=$('#ctaBtn').dataset.i18n; s[v]=Object.assign({c:0,click:0},s[v]); s[v].click++; saveStats(s);
+      const payload=encodeURIComponent(`deal:${res.p.action}:${res.p.asset}:${res.p.amount||''}:${res.p.currency||''}`);
+      window.open(`https://t.me/GARANT_S_bot?start=${payload}`,'_blank');
+    };
+    $('#ctaHow').onclick=()=>{
+      const url= state.lang==='ru' ? 'https://t.me/GARANT_S_bot?start=help_ru' : 'https://t.me/GARANT_S_bot?start=help_en';
+      window.open(url,'_blank');
+    };
+
+    // Referral link generator
+    $('#genRef').onclick=()=>{
+      const id=($('#tgid').value||'').replace(/\D/g,''); if(!id){alert(state.lang==='ru'?'Введите корректный ID':'Enter valid ID'); return;}
+      const link=`https://t.me/GARANT_S_bot?start=ref_${id}`; const a=$('#refUrl'); a.href=link; a.textContent=link; localStorage.setItem('g3_ref',link);
+    };
+    const savedRef=localStorage.getItem('g3_ref'); if(savedRef){$('#refUrl').href=savedRef; $('#refUrl').textContent=savedRef}
+
+    // NFT share
+    $('#shareNFT').onclick=()=>{
+      const text= state.lang==='ru' ? 'Мой NFT‑сертификат доверия от ГАРАНТ 3.0' : 'My Trust NFT Certificate by GARANT 3.0';
+      const url= $('#refUrl').href && $('#refUrl').href!=='#' ? $('#refUrl').href : 'https://t.me/GARANT_S_bot';
+      const msg=`${text} · ${url}`;
+      if(navigator.share){navigator.share({title:'GARANT 3.0',text:msg,url})}
+      else{window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(msg),'_blank')}
+      // bonus: bump referral earnings demo
+      const eKey='g3_earn'; let e=parseFloat(localStorage.getItem(eKey)||'0'); e+=1.2; localStorage.setItem(eKey,e.toFixed(2));
+      const t= state.lang==='ru' ? 'Вы уже заработали $' : 'You earned $';
+      $('#earnings').textContent=t+(e.toFixed(2))+ (state.lang==='ru'?'. Поделитесь — и начните получать пассивный доход':'. Share to start passive income');
+    };
+
+    // Initialize
+    setLang(state.lang);
+    refreshRisk();
+  })();
+  </script>
+</body>
+</html>
