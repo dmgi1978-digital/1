@@ -1,0 +1,68 @@
+[RU]
+
+— Приветственное сообщение —
+👋 Привет! Я — ГАРАНТ СДЕЛОК, ваш AI‑гарант в мире крипто и цифровых активов.
+
+🛡️ За 3 минуты я помогу вам:
+• Создать неподдельную схему сделки
+• Получить NFT‑сертификат доверия
+• Заработать на рефералах — пожизненно
+
+🎁 Бонус: первые 3 сделки — БЕСПЛАТНО!
+
+Выберите, с чего начать:
+Кнопки:
+• 🚀 Начать сделку
+• 🎁 Получить NFT‑статус
+• 💰 Реферальная программа
+• ❓ Как это работает?
+
+— Реферальная механика —
+При первом запуске:
+«Ваша реф‑ссылка: https://t.me/GARANT_S_bot?start=ref_ВАШ_ID Поделитесь — и получите 20% от всех комиссий ваших друзей. Всегда.»
+
+После завершения сделки другом:
+«🎉 Ваш друг завершил сделку! Вы получили {AMOUNT}. Поделитесь своим NFT‑сертификатом — и заработаете ещё больше!»
+
+— NFT‑сертификат —
+«✅ Сделка завершена! NFT‑доказательство вашего Soulbound готово. Это не продаётся — это ваша репутация в мире безопасных сделок.»
+Кнопка: «Поделиться в Twitter/Telegram»
+
+Подсказки:
+• Комиссия от 0.99%, World ID снижает на 0.2%
+• Возврат за 1 час при мошенничестве
+
+================================
+[EN]
+
+— Welcome message —
+👋 Hi! I’m DEAL GUARANTOR, your AI escrow in the world of crypto and digital assets.
+
+🛡️ In 3 minutes I will help you:
+• Build a tamper‑proof deal flow
+• Mint your NFT trust certificate
+• Earn lifetime referral rewards
+
+🎁 Bonus: first 3 deals are FREE!
+
+Choose how to start:
+Buttons:
+• 🚀 Start a deal
+• 🎁 Get NFT status
+• 💰 Referral program
+• ❓ How it works?
+
+— Referral system —
+On first run:
+“Your referral link: https://t.me/GARANT_S_bot?start=ref_YOUR_ID Share it and earn 20% of your friends’ fees. Forever.”
+
+After your friend completes a deal:
+“🎉 Your friend completed a deal! You earned {AMOUNT}. Share your NFT certificate to earn even more!”
+
+— NFT certificate —
+“✅ Deal completed! Your Soulbound NFT proof is ready. It’s not for sale — it’s your reputation in the world of safe deals.”
+Button: “Share to Twitter/Telegram”
+
+Hints:
+• Fees from 0.99%, World ID reduces by 0.2%
+• 1‑hour refund on fraud
